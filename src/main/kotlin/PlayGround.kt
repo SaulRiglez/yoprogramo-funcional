@@ -7,8 +7,6 @@ val <T> List<T>.head: T
     get() = first()
 
 
-val p1 = { a: Int, b: Int -> a <= b }
-
 fun <T> isSorted(aa: List<T>, order: (T, T) -> Boolean): Boolean {
     tailrec fun loop(head: T, tail: List<T>): Boolean {
         return when {

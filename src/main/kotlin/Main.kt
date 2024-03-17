@@ -16,8 +16,15 @@ fun main() {
     println(findFirst(array1, predicate1))
     println(findFirst(array2, predicate2))
 
-    val enteros = mutableListOf(1,2,3,4,4,5)
-    println("Is ordered: ${isSorted(enteros, p1)}")
+    val enteros = mutableListOf(1, 2, 3, 4, 4, 5)
+    println(
+        "Is ordered: ${
+            isSorted(enteros) { a, b ->
+                println("a: $a, b:$b")
+                a <= b
+            }
+        }"
+    )
 }
 
 fun <T> findFirst(xs: Array<T>, p: (T) -> Boolean): Int {
