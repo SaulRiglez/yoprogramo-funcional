@@ -19,6 +19,9 @@ fun <T> isSorted(aa: List<T>, order: (T, T) -> Boolean): Boolean {
     return aa.isEmpty() || loop(aa.head, aa.tail)
 }
 
-fun <A, B, C> partial1(a: A, f: (a: A, b: B) -> C): (B) -> C = {
-        b -> f(a, b)
+fun <A, B, C> partial1(a: A, f: (a: A, b: B) -> C): (B) -> C = { b ->
+    f(a, b)
 }
+
+//Currying function - Exercise 2.3
+fun <A, B, C> curry(f: (a: A, b: B) -> C): (a: A) -> (b: B) -> C = { a -> { b -> f(a, b) } }
