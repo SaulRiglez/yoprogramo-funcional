@@ -18,3 +18,7 @@ fun <T> isSorted(aa: List<T>, order: (T, T) -> Boolean): Boolean {
 
     return aa.isEmpty() || loop(aa.head, aa.tail)
 }
+
+fun <A, B, C> partial1(a: A, f: (a: A, b: B) -> C): (B) -> C = {
+        b -> f(a, b)
+}
